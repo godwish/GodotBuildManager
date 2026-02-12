@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godot Build Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1 data-i18n="app.title">Godot Build Manager</h1>
+            <div class="header-controls">
+                <nav class="tabs">
+                    <button class="tab-btn active" data-tab="web" data-i18n="nav.web_builds">Web Builds</button>
+                    <button class="tab-btn" data-tab="android" data-i18n="nav.android_builds">Android Builds</button>
+                    <button class="tab-btn" data-tab="upload" id="upload-tab-btn" style="display: none;"
+                        data-i18n="nav.upload">Upload</button>
+                </nav>
+                <div class="lang-selector">
+                    <select id="lang-select">
+                        <!-- Options populated by i18n.js -->
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Web Build Section -->
+            <section id="web-section" class="tab-content active">
+                <div class="latest-build-container" id="web-latest">
+                    <!-- Latest Web Build injected here -->
+                </div>
+
+                <div class="build-list-header">
+                    <h2 data-i18n="section.construction_history">Construction History</h2>
+                </div>
+                <!-- List Header Row -->
+                <div class="list-header-row">
+                    <span data-i18n="table.version">Version</span>
+                    <span data-i18n="table.uploaded">Uploaded</span>
+                    <span data-i18n="table.description">Description</span>
+                    <span data-i18n="table.action">Action</span>
+                </div>
+                <div class="build-list" id="web-list">
+                    <!-- Web Builds List -->
+                </div>
+                <div class="pagination" id="web-pagination">
+                    <!-- Pagination -->
+                </div>
+            </section>
+
+            <!-- Android Build Section -->
+            <section id="android-section" class="tab-content">
+                <div class="latest-build-container" id="android-latest">
+                    <!-- Latest Android Build injected here -->
+                </div>
+
+                <div class="build-list-header">
+                    <h2 data-i18n="section.release_history">Release History</h2>
+                </div>
+                <div class="list-header-row">
+                    <span data-i18n="table.version">Version</span>
+                    <span data-i18n="table.uploaded">Uploaded</span>
+                    <span data-i18n="table.description">Description</span>
+                    <span data-i18n="table.action">Action</span>
+                </div>
+                <div class="build-list" id="android-list">
+                    <!-- Android Builds List -->
+                </div>
+                <div class="pagination" id="android-pagination">
+                    <!-- Pagination -->
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section id="upload-section" class="tab-content">
+                <div class="upload-container">
+                    <div class="upload-type-selector">
+                        <button class="type-btn active" data-type="web" data-i18n="upload.web">Web</button>
+                        <button class="type-btn" data-type="android" data-i18n="upload.android">Android</button>
+                    </div>
+
+                    <form id="upload-form">
+                        <input type="hidden" id="upload-type" name="type" value="web">
+
+                        <div class="form-group">
+                            <label for="version" data-i18n="upload.version_label">Version</label>
+                            <input type="text" id="version" name="version" placeholder="e.g., v1.0.2"
+                                data-i18n="upload.version_placeholder" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" data-i18n="upload.description_label">Description</label>
+                            <textarea id="description" name="description" placeholder="What's new in this build?"
+                                data-i18n="upload.description_placeholder" required></textarea>
+                        </div>
+
+                        <div class="drop-zone" id="drop-zone">
+                            <p data-i18n="upload.drag_drop">Drag & Drop your build here</p>
+                            <p class="small" data-i18n="upload.click_select">or click to select file</p>
+                            <input type="file" id="file-input" name="file" required style="display: none;">
+                            <div class="file-info" id="file-info"></div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="publish-btn" data-i18n="upload.publish_btn">Publish
+                            Version</button>
+                    </form>
+                    <div id="upload-status" class="status-message"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

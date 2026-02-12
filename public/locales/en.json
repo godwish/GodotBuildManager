@@ -1,0 +1,52 @@
+{
+    "app": {
+        "title": "Godot Build Manager"
+    },
+    "nav": {
+        "web_builds": "Web Builds",
+        "android_builds": "Android Builds",
+        "upload": "Upload"
+    },
+    "section": {
+        "construction_history": "Construction History",
+        "release_history": "Release History",
+        "latest_release": "Latest Release: {version}"
+    },
+    "table": {
+        "version": "Version",
+        "uploaded": "Uploaded",
+        "description": "Description",
+        "action": "Action"
+    },
+    "upload": {
+        "web": "Web",
+        "android": "Android",
+        "version_label": "Version",
+        "version_placeholder": "e.g., v1.0.2",
+        "description_label": "Description",
+        "description_placeholder": "What's new in this build?",
+        "drag_drop": "Drag & Drop your build here",
+        "click_select": "or click to select file",
+        "publish_btn": "Publish Version",
+        "publishing": "Publishing...",
+        "success": "Success! Build published.",
+        "select_file_alert": "Please select a file!",
+        "selected_file": "Selected: {fileName} ({size} MB)"
+    },
+    "action": {
+        "run_game": "Run Game",
+        "download": "Download",
+        "play_latest": "Play Latest Version",
+        "download_latest": "Download Latest Version",
+        "prev": "Prev",
+        "next": "Next",
+        "delete": "Delete"
+    },
+    "message": {
+        "no_builds": "No builds found.",
+        "page_info": "Page {page} of {total}",
+        "error": "Error: {error}",
+        "confirm_delete": "Are you sure you want to delete this build? This cannot be undone.",
+        "delete_success": "Build deleted successfully."
+    }
+}

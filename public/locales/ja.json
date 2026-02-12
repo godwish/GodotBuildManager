@@ -1,0 +1,52 @@
+{
+    "app": {
+        "title": "Godot ビルドマネージャー"
+    },
+    "nav": {
+        "web_builds": "Web ビルド",
+        "android_builds": "Android ビルド",
+        "upload": "アップロード"
+    },
+    "section": {
+        "construction_history": "構築履歴",
+        "release_history": "リリース履歴",
+        "latest_release": "最新リリース: {version}"
+    },
+    "table": {
+        "version": "バージョン",
+        "uploaded": "アップロード日時",
+        "description": "説明",
+        "action": "操作"
+    },
+    "upload": {
+        "web": "Web",
+        "android": "Android",
+        "version_label": "バージョン",
+        "version_placeholder": "例: v1.0.2",
+        "description_label": "説明",
+        "description_placeholder": "このビルドの新機能は何ですか？",
+        "drag_drop": "ビルドをここにドラッグ＆ドロップ",
+        "click_select": "またはクリックしてファイルを選択",
+        "publish_btn": "バージョンを公開",
+        "publishing": "公開中...",
+        "success": "成功！ビルドが公開されました。",
+        "select_file_alert": "ファイルを選択してください！",
+        "selected_file": "選択中: {fileName} ({size} MB)"
+    },
+    "action": {
+        "run_game": "ゲームを実行",
+        "download": "ダウンロード",
+        "play_latest": "最新バージョンをプレイ",
+        "download_latest": "最新バージョンをダウンロード",
+        "prev": "前へ",
+        "next": "次へ",
+        "delete": "削除"
+    },
+    "message": {
+        "no_builds": "ビルドが見つかりません。",
+        "page_info": "ページ {page} / {total}",
+        "error": "エラー: {error}",
+        "confirm_delete": "本当にこのビルドを削除しますか？この操作は取り消せません。",
+        "delete_success": "ビルドが正常に削除されました。"
+    }
+}

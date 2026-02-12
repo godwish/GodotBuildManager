@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Project specific
+uploads/
+builds/
+db/builds.db
+*.db
+*.log
+
+# Environment
+.env
+.DS_Store
+coverage/
+
+# IDE
+.vscode/
+.idea/
