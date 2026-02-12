@@ -1,13 +1,16 @@
 # GodotBuildManager
+A web-based tool for managing and distributing Godot game builds (Web and Android).
+
+## Screenshot
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5945ea5a-7bfd-44bb-9530-f0eef7daf11d" width="32%" />
   <img src="https://github.com/user-attachments/assets/f1faf1f1-e1a3-482b-818d-7fc49fd6d1a0" width="32%" />
-  <img src="https://github.com/user-attachments/assets/937dd5f1-52a5-4781-ad97-9cd8618cc054" width="32%" />
+  <img src="https://github.com/user-attachments/assets/934dd5f1-52a5-4781-ad97-9cd8618cc054" width="32%" />
 </p>
 
 
-A web-based tool for managing and distributing Godot game builds (Web and Android).
+
 
 [English](#english) | [한국어](#한국어) | [日本語](#日本語)
 
@@ -20,7 +23,11 @@ While testing a Godot build alone is straightforward, the repeated process of re
 
 This project is designed to solve that problem. Simply upload the version, description, and build files to deploy them immediately.
 
-* **Supported Platforms**: Web and Android.
+### ⚠️ Important Notes
+* **HTTPS Required**: Due to Godot 4's engine requirements (SharedArrayBuffer), **Web builds will only run in an HTTPS environment.**
+* **Access Control**: Management features (Upload and Delete buttons) are only visible when accessing from a **local network (192.168.*)**. External users will only have access to "Run" and "Download" features.
+
+### Platform Support
 * **Web Builds**: Upload the build folder as a ZIP file.
 * **Android Builds**: Upload the APK file directly.
 
@@ -34,38 +41,10 @@ This project is designed to solve that problem. Simply upload the version, descr
 -   **Other**: Multer (file upload), Adm-Zip (zip extraction)
 
 ### Deployment Instructions
-
-#### 1. Prerequisites
--   Node.js (v14 or higher)
--   npm (Node Package Manager)
-
-#### 2. Installation
-Clone the repository and install dependencies:
-```bash
-git clone https://github.com/your-username/GodotBuildManager.git
-cd GodotBuildManager
-npm install
-```
-
-#### 3. Environment Setup
-**Security Note**: Never commit your `.env` file to version control.
-
-1.  Copy the example environment file:
-    ```bash
-    cp .env.example .env
-    ```
-2.  Open `.env` and configure your settings:
-    ```ini
-    PORT=3000
-    APP_TITLE=Godot Build Manager
-    ```
-
-#### 4. Running the Application
-Start the server:
-```bash
-npm start
-```
-The application will be available at `http://localhost:3000`.
+1.  **Prerequisites**: Node.js (v14 or higher), npm.
+2.  **Installation**: `npm install` after cloning.
+3.  **Environment Setup**: Copy `.env.example` to `.env` and configure `PORT`.
+4.  **Running**: `npm start` and visit `http://localhost:3000`.
 
 ---
 
@@ -76,7 +55,11 @@ Godot로 빌드를 뽑아서 혼자 테스트한다면 큰 문제가 없지만, 
 
 이 프로젝트는 그런 번거로움을 해결하기 위해 만들어졌습니다. 버전, 설명, 배포용 빌드를 올리면 즉시 배포가 가능합니다.
 
-* **지원 플랫폼**: 웹(Web) 및 안드로이드(Android).
+### ⚠️ 중요 사항
+* **HTTPS 필수**: Godot 4 엔진 사양(SharedArrayBuffer 사용)으로 인해, **웹 빌드는 반드시 HTTPS 환경에서만 실행됩니다.**
+* **접근 제어**: 업로드 및 삭제와 같은 관리 메뉴는 **내부망(192.168.*)** 접속 시에만 나타납니다. 외부 접속 시에는 관리 기능이 제한되며 빌드 실행 및 다운로드만 가능합니다.
+
+### 지원 플랫폼
 * **웹 빌드**: 빌드 폴더를 ZIP으로 압축해서 업로드하세요.
 * **안드로이드 빌드**: APK 파일을 그대로 업로드하세요.
 
@@ -90,38 +73,10 @@ Godot로 빌드를 뽑아서 혼자 테스트한다면 큰 문제가 없지만, 
 -   **기타**: Multer (파일 업로드), Adm-Zip (ZIP 압축 해제)
 
 ### 배포 방법
-
-#### 1. 필수 조건
--   Node.js (v14 이상)
--   npm
-
-#### 2. 설치
-저장소를 클론하고 의존성을 설치합니다:
-```bash
-git clone https://github.com/your-username/GodotBuildManager.git
-cd GodotBuildManager
-npm install
-```
-
-#### 3. 환경 설정
-**보안 주의**: `.env` 파일은 절대 버전 관리 시스템에 올리지 마세요.
-
-1.  예제 환경 파일을 복사합니다:
-    ```bash
-    cp .env.example .env
-    ```
-2.  `.env` 파일을 열어 설정을 수정합니다:
-    ```ini
-    PORT=3000
-    APP_TITLE=Godot Build Manager
-    ```
-
-#### 4. 실행
-서버를 시작합니다:
-```bash
-npm start
-```
-애플리케이션은 `http://localhost:3000`에서 접속할 수 있습니다.
+1.  **필수 조건**: Node.js (v14 이상), npm.
+2.  **설치**: 클론 후 `npm install`.
+3.  **환경 설정**: `.env.example`을 `.env`로 복사 후 `PORT` 등 설정.
+4.  **실행**: `npm start` 후 `http://localhost:3000` 접속.
 
 ---
 
@@ -132,13 +87,17 @@ Godotでビルドを作成し、一人でテストする分には大きな問題
 
 このプロジェクトは、そのような状況を解決するために作られました。バージョン、説明、配布用ビルドをアップロードすれば、すぐに配布が可能です。
 
-* **サポートされているプラットフォーム**: ウェブ（Web）および Android。
-* **ウェブビルド**: ビルドフォルダを ZIP 形式で圧縮してアップロードしてください。
+### ⚠️ 重要事項
+* **HTTPS 必須**: Godot 4 のエンジン仕様 (SharedArrayBuffer) により、**ウェブビルドは HTTPS 環境でのみ動作します。**
+* **アクセス制限**: アップロードや削除などの管理メニューは、**ローカルネットワーク (192.168.*)** からのアクセス時のみ表示されます。外部からアクセスした場合、管理機能は制限され、実行とダウンロードのみが可能です。
+
+### サポートされているプラットフォーム
+* **ウェブビル드**: ビルドフォルダを ZIP 形式で圧縮してアップロードしてください。
 * **Androidビルド**: APK ファイルをそのままアップロードしてください。
 
-**ヒント**: ビルド時にバージョン情報を含めることで、後で問題が発生した際にどのビル드で問題が起きたのかを把握し、再現しやすくなります。
+**ヒント**: ビルド時にバージョン情報を含めることで、後で問題が発生した際にどのビルドで問題が起きたのかを把握し、再現しやすくなります。
 
-### 使用技術
+### 사용 기술 / 使用技術
 -   **ランタイム**: Node.js
 -   **フレームワーク**: Express.js
 -   **データベース**: SQLite (`better-sqlite3`)
@@ -146,35 +105,7 @@ Godotでビルドを作成し、一人でテストする分には大きな問題
 -   **その他**: Multer (ファイルアップロード), Adm-Zip (ZIP解凍)
 
 ### デプロイ方法
-
-#### 1. 前提条件
--   Node.js (v14以上)
--   npm
-
-#### 2. イン스트ール
-リポジトリをクローンし、依存関係をインストールします:
-```bash
-git clone https://github.com/your-username/GodotBuildManager.git
-cd GodotBuildManager
-npm install
-```
-
-#### 3. 環境設定
-**セキュリティに関する注意**: `.env` ファイルは絶対にバージョン管理システムにコミットしないでください。
-
-1.  サンプル環境設定ファイルをコピーします:
-    ```bash
-    cp .env.example .env
-    ```
-2.  `.env` ファイルを開き、設定を編集します:
-    ```ini
-    PORT=3000
-    APP_TITLE=Godot Build Manager
-    ```
-
-#### 4. 実行
-サーバーを起動します:
-```bash
-npm start
-```
-アプリケーションは `http://localhost:3000` で利用可能です。
+1.  **前提条件**: Node.js (v14以上), npm.
+2.  **インストール**: クローン後 `npm install`.
+3.  **環境設定**: `.env.example` を `.env` にコピーして設定.
+4.  **実行**: `npm start` 後 `http://localhost:3000` にアクセス.
