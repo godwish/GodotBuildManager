@@ -8,6 +8,17 @@ A web-based tool for managing and distributing Godot game builds (Web and Androi
 
 ## English
 
+### Project Description
+While testing a Godot build alone is straightforward, the repeated process of requesting tests and distributing versions can become exhausting for both developers and testers. 
+
+This project is designed to solve that problem. Simply upload the version, description, and build files to deploy them immediately.
+
+* **Supported Platforms**: Web and Android.
+* **Web Builds**: Upload the build folder as a ZIP file.
+* **Android Builds**: Upload the APK file directly.
+
+**Pro-tip**: Including version information within your build will make it much easier to identify which version a bug occurred in and reproduce the issue later.
+
 ### Technologies Used
 -   **Runtime**: Node.js
 -   **Framework**: Express.js
@@ -52,6 +63,17 @@ The application will be available at `http://localhost:3000`.
 ---
 
 ## 한국어
+
+### 프로젝트 설명
+Godot로 빌드를 뽑아서 혼자 테스트한다면 큰 문제가 없지만, 테스트를 요청하고 버전을 배포하는 과정이 반복되면 개발자와 테스터 모두에게 피곤한 상황이 됩니다.
+
+이 프로젝트는 그런 번거로움을 해결하기 위해 만들어졌습니다. 버전, 설명, 배포용 빌드를 올리면 즉시 배포가 가능합니다.
+
+* **지원 플랫폼**: 웹(Web) 및 안드로이드(Android).
+* **웹 빌드**: 빌드 폴더를 ZIP으로 압축해서 업로드하세요.
+* **안드로이드 빌드**: APK 파일을 그대로 업로드하세요.
+
+**팁**: 빌드를 뽑으실 때 버전 정보를 포함하면, 추후 문제가 생겼을 때 어떤 빌드에서 발생했는지 파악하기 쉬워 문제를 재현하는 데 큰 도움이 됩니다.
 
 ### 사용 기술
 -   **런타임**: Node.js
@@ -98,6 +120,17 @@ npm start
 
 ## 日本語
 
+### プロジェクト説明
+Godotでビルドを作成し、一人でテストする分には大きな問題はありませんが、テストを依頼し、バージョンを配布する過程が繰り返されると、開発者とテスターの両方にとって疲弊する状況になります。
+
+このプロジェクトは、そのような状況を解決するために作られました。バージョン、説明、配布用ビルドをアップロードすれば、すぐに配布が可能です。
+
+* **サポートされているプラットフォーム**: ウェブ（Web）および Android。
+* **ウェブビルド**: ビルドフォルダを ZIP 形式で圧縮してアップロードしてください。
+* **Androidビルド**: APK ファイルをそのままアップロードしてください。
+
+**ヒント**: ビルド時にバージョン情報を含めることで、後で問題が発生した際にどのビル드で問題が起きたのかを把握し、再現しやすくなります。
+
 ### 使用技術
 -   **ランタイム**: Node.js
 -   **フレームワーク**: Express.js
@@ -111,7 +144,7 @@ npm start
 -   Node.js (v14以上)
 -   npm
 
-#### 2. インストール
+#### 2. イン스트ール
 リポジトリをクローンし、依存関係をインストールします:
 ```bash
 git clone https://github.com/your-username/GodotBuildManager.git
