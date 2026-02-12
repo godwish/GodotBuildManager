@@ -22,24 +22,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Subscribe to language changes
     window.addEventListener('localeChanged', () => {
-        // Refresh current view (re-render lists to update relative dates if we used them, 
-        // but mainly to update static text which is handled by i18n.updatePage(), 
-        // and dynamic strings in render functions)
-
-        // For dynamic content, we need to re-render.
-        // Identify active tab
-        const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
-
-        if (activeTab === 'web' || activeTab === 'android') {
-            // We can just reload the builds. 
-            // Note: loadBuilds/loadLatest are async but we don't strictly need to await them here 
-            // unless we want to show a loader.
-            loadBuilds(activeTab).then(() => {
-                // Also update latest
-                loadLatest(activeTab);
-            });
-        }
-        // If upload tab, static text is already updated by i18n.updatePage called in setLocale.
+        // Refresh all dynamic content (lists and latest builds)
+        // This ensures that hidden tabs are also updated with the new locale
+        loadBuilds('web');
+        loadLatest('web');
+        loadBuilds('android');
+        loadLatest('android');
     });
 });
 
