@@ -118,7 +118,15 @@ async function loadBuilds(type, page = 1) {
 async function loadLatest(type) {
     try {
         const response = await fetch(`/api/builds/${type}/latest`);
-        if (!response.ok) return; // Handle 404 or empty quietly
+        if (!response.ok) {
+            if (response.status === 404) {
+                const container = document.getElementById(`${type}-latest`);
+                if (container) {
+                    container.innerHTML = `<p style="text-align: center; color: var(--text-secondary); margin: 1rem 0;">${i18n.t('message.no_builds')}</p>`;
+                }
+            }
+            return;
+        }
 
         const build = await response.json();
         renderLatest(build, type);
